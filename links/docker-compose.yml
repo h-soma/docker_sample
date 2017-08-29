@@ -1,0 +1,22 @@
+mysql:
+  container_name: "mysql"
+  image: mysql
+  ports:
+    - 32770:3306
+  volumes:
+    - ./datadir:/var/lib/mysql
+  environment:
+    MYSQL_DATABASE: somadb
+    MYSQL_USER: h-soma
+    MYSQL_PASSWORD: password
+    MYSQL_ROOT_PASSWORD: Password
+
+php:
+  container_name: "php"
+  build: ./
+  ports:
+    - 180:80
+  volumes:
+    - ./html:/var/www/html
+  links:
+    - mysql
