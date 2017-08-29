@@ -2,7 +2,7 @@ mysql:
   container_name: "mysql"
   image: mysql
   ports:
-    - 32770:3306
+    - 60001:3306
   volumes:
     - ./datadir:/var/lib/mysql
   environment:
@@ -15,7 +15,7 @@ php:
   container_name: "php"
   build: ./
   ports:
-    - 180:80
+    - 60000:80
   volumes:
     - ./html:/var/www/html
   links:

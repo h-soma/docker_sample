@@ -4,7 +4,7 @@
 <?php
 // 接続
 try {
-     $dbh = new PDO('mysql:host=192.168.3.20;port=32770;protocol=tcp;dbname=somadb','h-soma','password');
+     $dbh = new PDO('mysql:host=mysql;dbname=somadb','h-soma','password');
 } catch (PDOException $e){
      var_dump($e->getMessage());
      exit;
